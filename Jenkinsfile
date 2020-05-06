@@ -1,7 +1,12 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'test'
+    }
+
+  }
   stages {
-    stage('') {
+    stage('error') {
       steps {
         mail(subject: 'df', body: 'dfd', bcc: 'df', cc: 'vc')
       }
